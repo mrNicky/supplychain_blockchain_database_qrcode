@@ -91,8 +91,9 @@ step5 = transfer("retailer", "26 octobre 2019 - 22:05", retailer, warehousing, s
 
 print("METADATA OF ASSET: ", "\n", step5["metadata"], "\n")
 id = step5["asset"]["id"]
-print("ASSET ID : ", "\n", id)
+print("ASSET ID : ", "\n", id, '\n')
 
+print("QR CODE CREATED, check your current folder")
 #Create and save qrcode in your current directory (with python script)
 img = qrcode.make(id)
 path = os.getcwd()
