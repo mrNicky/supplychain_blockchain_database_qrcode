@@ -27,11 +27,14 @@ while True:
 from bigchaindb_driver import BigchainDB
 bdb_root_url = 'http://localhost:9984'
 bdb = BigchainDB(bdb_root_url)
+
 tx = bdb.transactions.get(asset_id=d[1])
+
 track = tx[-1]["metadata"]
 print("\n", "PARCOURS DE LA PIECE : ")
 for k, v in track.items():
     print("--->", k, v)
+
 origin = bdb.transactions.retrieve(d[1].decode("utf-8"))
 print("\n","TYPE DE PIECE & ORIGINE: ", origin['asset']['data'], "\n"*6)
 
